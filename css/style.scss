@@ -1,5 +1,9 @@
 	$green: #88a308;
 	$borders: 4px;
+// break points
+	$small: 860px;
+	$medium: 1080px;
+
 
 	@import url(../futura/stylesheet.css) screen;
 	* {
@@ -37,6 +41,9 @@
 		margin: 0 auto;
 		padding-top: 50px;
 	}
+
+
+
 	.content_main {
 		float: left;
 		width: 50%;
@@ -69,7 +76,36 @@
 		height: 120px;
 		background: $green;
 		border-radius: 8px 8px 0 0;
+
+	
+		.betainfo {
+				display: none;
+				width: 300px;
+				min-height: 120px;
+				background-color: $green;
+				color: #fff;
+				position: absolute;
+				top: 10px;
+				left: calc(50% - 150px);
+				border: 2px solid #fff;
+				border-radius: $borders;
+			}
+
+		.betainfo-show {
+				display: block;
+				width: 300px;
+				min-height: 120px;
+				background-color: $green;
+				color: #fff;
+				position: absolute;
+				top: 10px;
+				left: calc(50% - 150px);
+				border: 2px solid #fff;
+				border-radius: $borders;
+			}
+
 	}
+
 header h1 {
 		background: url(../img/basil.png) no-repeat;
 		font-family: FuturaStdLight;
@@ -128,7 +164,15 @@ header h1 {
 		background: url(../img/btns.png) no-repeat;
 		border-radius: 6px;
 	}
+
+	@media screen and (max-width: $small){ 
+
+		a {
+			width: 95px;
+		}
 }
+
+
 	.nav_pickit a {
 		background-position: 0 0;
 	}
@@ -198,7 +242,7 @@ header h1 {
 
 	}
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: $small) {
 
 	.branding h2 {
 		display: none;
@@ -206,9 +250,7 @@ header h1 {
 	.nav_main p {
 		display: none;
 	}
-	.nav_features a {
-		width: 95px;
-	}
+	
 	.content_main, .content_sub {
 		width: 100%;
 		float: none;
@@ -218,7 +260,7 @@ header h1 {
 		padding: 6px;
 	}
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: $medium) {
 	.branding h2 {
 		right: 10px;
 	}
@@ -233,11 +275,16 @@ header h1 {
 	cursor: pointer;
 	-webkit-transform: scale(0.4) rotate(15deg);
 	-webkit-transition: all 0.5s linear;
-}
 
-.rect-container:hover {
+&.rect-container:hover {
 	-webkit-transform: scale(0.5) rotate(0deg);
 
+}
+
+@media screen and (max-width: $small){
+	top: -50;
+	right: 10px;
+	-webkit-transform: scale(0.3)
 }
 
 .rect {
@@ -262,18 +309,10 @@ header h1 {
 }
 
 .three {
-	-webkit-transform: rotate(60deg);
+	-webkit-transform: rotate(60deg);}
+
 }
 
-
-
-
-
-
-
-
-
-
-
+}
 
 
